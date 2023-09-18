@@ -127,7 +127,6 @@
       when:
       - ( ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
         and not ( lookup("env", "container") == "bwrap-osbuild" ) )
-      - is_fips_enabled.stdout.find('FIPS mode is enabled.') == -1
       tags:
       - CCE-82155-3
       - DISA-STIG-RHEL-08-010020
